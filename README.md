@@ -1,8 +1,8 @@
-# 📊 Predicción de Costes Laborales en España (INE)
+# 📊 Análisis y Predicción del Mercado Laboral en España (INE)
 
 > **Pipeline End-to-End aplicando XGBoost, clustering (K-Means) y explicabilidad (SHAP) sobre datos del INE para descubrir el impacto de la inflación y las diferencias regionales.**
 
-Este proyecto es una solución integral de Machine Learning diseñada para analizar y predecir el coste laboral por trabajador en España, utilizando datos oficiales macroeconómicos del Instituto Nacional de Estadística (INE).
+Este proyecto es una solución integral de Machine Learning diseñada para analizar y predecir el coste laboral por trabajador en España (por ambos sexos), y a su vez, analizar qué Comunidades Autónomas tienen mayor semejanza en relación con las tasas de paro y el coste salarial. Se utilizan datos oficiales macroeconómicos del Instituto Nacional de Estadística (INE). 
 
 El análisis abarca desde la extracción en bases de datos (SQL) hasta el despliegue de modelos predictivos y técnicas de explicabilidad (XAI).
 
@@ -32,6 +32,8 @@ El código está estructurado siguiendo principios de modularidad y MLOps:
     ├── cleaning.py           # Lógica de limpieza
     ├── ml_preprocessing.py   # Feature Engineering (One-Hot, StandardScaler)
     ├── ml_models.py          # Entrenamiento supervisado (XGBoost, Random Forest) y proyecciones
+    ├── ml_clustering.py      # Aprendizaje no supervisado (K-Means)
+    └── visualizations.py     # Gráficos, distribuciones y explicabilidad SHAP
 ```
 
 ## 🧠 Fases del Proyecto
