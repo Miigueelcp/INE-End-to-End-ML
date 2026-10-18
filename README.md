@@ -82,5 +82,5 @@ El código está estructurado siguiendo principios de modularidad y MLOps:
      python 02_ml_pipeline.py
      ```
   
-*Desarrollado por Miguel Ángel Cumplido Pavón - [LinkedIn](www.linkedin.com/in/miguelángelcumplidopavón)*
+*Desarrollado por Miguel Ángel Cumplido Pavón - [LinkedIn](https://www.linkedin.com/in/miguelángelcumplidopavón)*
 
