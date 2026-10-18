@@ -32,7 +32,7 @@ El código está estructurado siguiendo principios de modularidad y MLOps:
     ├── cleaning.py           # Lógica de limpieza
     ├── ml_preprocessing.py   # Feature Engineering (One-Hot, StandardScaler)
     ├── ml_models.py          # Entrenamiento supervisado (XGBoost, Random Forest) y proyecciones
-```text
+```
 
 ## 🧠 Fases del Proyecto
 
