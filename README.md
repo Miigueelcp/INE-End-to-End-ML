@@ -38,18 +38,15 @@ El código está estructurado siguiendo principios de modularidad y MLOps:
 
 ## 🧠 Fases del Proyecto
 
-1. **Ingeniería de Datos (ETL):** Integración de encuestas de costes laborales y Encuesta de Población Activa (EPA). Pivotado de variables para crear un dataset de tipo *Wide* listo para modelado.
+1. **Ingeniería de Datos y SQL (ETL):** Carga inicial, limpieza y exploración gráfica de las encuestas (EPA y Costes Laborales). Integración de los dataframes en SQL y posterior extracción a Python, pivotando las variables a un formato *wide* optimizado para el modelado.
 
-2. **Análisis Exploratorio (EDA):** Evaluación de distribuciones, correlaciones de Pearson y detección de valores atípicos macroeconómicos (los cuales se mantienen por ser representativos de crisis y picos económicos).
+2. **Análisis Exploratorio Integrado (EDA):** Evaluación visual y estadística del dataset consolidado para extraer conclusiones preliminares. Incluye análisis de distribuciones, correlaciones de Pearson y detección de valores atípicos macroeconómicos (mantenidos de forma intencionada por ser representativos de crisis y picos económicos reales). 
 
-3. **Modelado Predictivo Supervisado:**
-   - División temporal (*Time-based split*) entrenando hasta 2024 y evaluando en 2025/2026 para evitar *Data Leakage*.
-   - Evaluación de Regresión Lineal, Random Forest y **XGBoost** (mejor modelo por su capacidad para captar relaciones no lineales).
-   - Proyección de costes laborales futuros aplicando deltas de estacionalidad histórica.
+3. **Modelado Predictivo Supervisado:** Predicción del coste laboral evaluando modelos de Regresión Lineal, Random Forest y **XGBoost** (seleccionado como el mejor por su capacidad para captar relaciones no lineales). Se aplicó una división temporal (*Time-based split*) entrenando hasta 2024 para evitar *Data Leakage*, y se proyectaron costes futuros aplicando deltas de estacionalidad histórica.
 
-4. **Explicabilidad con SHAP:** Apertura de la "caja negra" del modelo XGBoost para entender el peso de cada variable en la predicción final (Beeswarm y gráficos de barras).
+4. **Explicabilidad de Modelos (SHAP):** Apertura de la "caja negra" del modelo XGBoost. Utilización de valores SHAP (gráficos *Beeswarm* y de barras) para interpretar con precisión el impacto y el peso de cada variable macroeconómica en las predicciones finales.
 
-5. **Aprendizaje No Supervisado (K-Means):** Análisis de la relación histórica y reciente entre la Tasa de Paro y el Coste Laboral por Comunidad Autónoma y sector económico.
+5. **Aprendizaje No Supervisado (K-Means):** Aplicación de técnicas de *clustering* para segmentar y analizar las similitudes en la relación entre la tasa de paro y el coste salarial. Se contrasta la evolución histórica con la reciente para perfilar el comportamiento de las diferentes Comunidades Autónomas y sectores económicos.
 
 ## 💡 Conclusiones Clave y Business Insights
 
