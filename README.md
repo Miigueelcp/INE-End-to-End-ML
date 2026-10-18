@@ -64,3 +64,18 @@ El código está estructurado siguiendo principios de modularidad y MLOps:
    cd Spain-Labor-Cost-Predictor
     ├── ml_clustering.py      # Aprendizaje no supervisado (K-Means)
     └── visualizations.py     # Gráficos, distribuciones y explicabilidad SHAP
+
+2. **Instalar dependencias:**
+   ```bash
+   pip install -r requirements.txt
+
+3. **Configuración de Base de Datos:**
+   
+   Asegurate de teneer un servidor MySQL en ejecución y configura las credenciales (o variables de entorno) necesarias en el módulo src/database.py
+
+4. **Ejecutar pipelines**
+   - Primero procesa los datos crudos y súbelos a la base de datos: python 01_data_pipeline.py
+   - Después entrena los modelos y genera las visualizaciones: python 02_ml_pipeline.py
+  
+Desarrollado por Miguel Ángel Cumplido Pavón - www.linkedin.com/in/miguelángelcumplidopavón
+
