@@ -25,8 +25,6 @@ El proyecto combina **Machine Learning supervisado y no supervisado**, utilizand
 El código se organiza en módulos para separar la preparación de datos, el análisis exploratorio, el modelado y la visualización. Además, se incluyen los scripts SQL, los datos originales del INE y el archivo con las predicciones generadas.
 
 ```text
-Spain-Labor-Cost-Predictor/
-│
 ├── README.md
 ├── requirements.txt           # Dependencias del proyecto
 ├── .gitignore                 # Archivos excluidos del control de versiones
