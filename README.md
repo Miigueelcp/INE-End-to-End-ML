@@ -55,6 +55,57 @@ El código se organiza en módulos para separar la preparación de datos, el an�
     └── visualizations.py      # Gráficos y análisis SHAP
 ```
 
+
+## 📋 Descripción de las variables
+
+El proyecto utiliza dos conjuntos de datos del Instituto Nacional de Estadística (INE): uno relacionado con el coste laboral por trabajador y otro con las tasas de actividad, empleo y paro de la población. Tras la limpieza y transformación, ambos conjuntos se integran para realizar el análisis exploratorio y entrenar los modelos de Machine Learning.
+
+### 1. Variables del coste laboral
+
+| Variable | Descripción |
+|---|---|
+| `comunidades_autonomas` | Comunidad Autónoma a la que corresponde la observación. |
+| `ano` | Año de referencia del dato. |
+| `trimestre` | Trimestre de referencia, del 1 al 4. |
+| `sectores_actividad` | Sector económico: industria, construcción o servicios. Los datos originales también incluyen el agregado de todos los sectores. |
+| `coste` | Componente del coste laboral analizado, como el coste laboral total, el coste salarial total, las cotizaciones obligatorias o las subvenciones y bonificaciones. |
+| `total` | Valor registrado para el componente del coste, expresado en euros por trabajador. |
+
+### 2. Variables de la Encuesta de Población Activa (EPA)
+
+| Variable | Descripción |
+|---|---|
+| `provincias` | Provincia a la que corresponde la observación original. |
+| `comunidades_autonomas` | Comunidad Autónoma asignada a cada provincia durante el proceso de transformación. |
+| `ano` | Año de referencia del dato. |
+| `trimestre` | Trimestre de referencia, del 1 al 4. |
+| `sexo` | Población de referencia según el sexo, incluyendo la categoría de ambos sexos. |
+| `tasas` | Indicador del mercado laboral: tasa de actividad, tasa de empleo o tasa de paro. |
+| `total` | Valor numérico del indicador, expresado como porcentaje. |
+
+**Nota metodológica:** los datos originales de la EPA están desglosados por provincia. Para integrarlos con la información del coste laboral, se agrupan por Comunidad Autónoma, periodo, sexo e indicador. En esta transformación se utiliza la media aritmética de las tasas provinciales, por lo que los valores resultantes son una aproximación descriptiva y no necesariamente coinciden con las tasas autonómicas oficiales publicadas por el INE.
+
+
+### 3. Variables del archivo de predicciones
+
+El archivo `outputs/predicciones_q3_q4_2026.csv` contiene las estimaciones correspondientes al tercer y cuarto trimestre de 2026. Se combinan las predicciones del modelo XGBoost para el coste laboral con las estimaciones de las tasas del mercado laboral obtenidas mediante promedios históricos.
+
+| Variable | Descripción |
+|---|---|
+| `ano` | Año de referencia de la estimación. |
+| `trimestre` | Trimestre proyectado: Q3 (3) o Q4 (4). |
+| `comunidades_autonomas` | Comunidad Autónoma a la que corresponde la estimación. |
+| `sectores_actividad` | Sector económico: industria, construcción o servicios. |
+| `tasa_actividad` | Tasa de actividad estimada mediante el procedimiento basado en la media histórica. |
+| `tasa_empleo` | Tasa de empleo estimada mediante el procedimiento basado en la media histórica. |
+| `tasa_paro` | Tasa de paro estimada mediante el procedimiento basado en la media histórica. |
+| `coste_estimado_euros` | Coste laboral por trabajador estimado mediante el modelo XGBoost, expresado en euros. Es la variable objetivo del modelo supervisado. |
+
+El archivo contiene 102 estimaciones correspondientes a 17 Comunidades Autónomas, tres sectores económicos y dos trimestres.
+
+**Nota metodológica:** el coste laboral se estima mediante XGBoost, mientras que las tasas de actividad, empleo y paro se obtienen mediante un procedimiento basado en promedios históricos. Por tanto, estas tasas no son predicciones realizadas por XGBoost, sino estimaciones calculadas de forma independiente. Los resultados deben interpretarse teniendo en cuenta las limitaciones de ambos procedimientos.
+
+
 ## 🧠 Fases del Proyecto
 
 ### 1. **Ingeniería de Datos y SQL (ETL)**
