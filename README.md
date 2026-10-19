@@ -121,6 +121,22 @@ La industria presenta, en los datos analizados, costes laborales medios superior
 
 Este resultado evidencia la importancia de considerar el sector económico al comparar los costes laborales entre territorios
 
+
+### 🔮 Predicciones del coste laboral para Q3 y Q4 de 2026
+
+Se utiliza el modelo XGBoost seleccionado para estimar el coste laboral por trabajador durante el tercer y cuarto trimestre de 2026. El archivo `outputs/predicciones_q3_q4_2026.csv` contiene 102 estimaciones correspondientes a 17 Comunidades Autónomas, tres sectores económicos y dos trimestres.
+
+**Evolución trimestral:** la media simple de las 51 combinaciones de Comunidad Autónoma y sector aumenta de 3.059,84 € en Q3 a 3.311,71 € en Q4, lo que representa una variación estimada del 8,23 % (251,87 €). Este resultado refleja el comportamiento de las predicciones generadas y no constituye una estimación ponderada del coste laboral medio nacional.
+
+**Diferencias sectoriales:** la industria presenta los costes laborales medios estimados más elevados, alcanzando los 3.629,09 € en Q4. La construcción registra el mayor crecimiento porcentual entre ambos trimestres (+9,43 %), mientras que los servicios mantienen los niveles medios más bajos.
+
+**Diferencias territoriales:** el País Vasco (3.968,01 €), la Comunidad de Madrid (3.904,10 €) y Cataluña (3.715,57 €) presentan los mayores costes laborales medios estimados para Q4. Por el contrario, Extremadura registra el menor valor medio, con 2.735,04 €.
+
+**Variabilidad regional:** Illes Balears presenta el mayor incremento medio estimado entre Q3 y Q4 (+11,37 %), mientras que Extremadura muestra el menor (+2,68 %). Estas diferencias ponen de manifiesto la heterogeneidad territorial de las proyecciones.
+
+**Limitaciones:** los valores recogidos en el archivo son estimaciones generadas por el modelo y no datos oficiales observados del INE. Los resultados deben interpretarse teniendo en cuenta el rendimiento predictivo del modelo, la estrategia de validación temporal y los supuestos utilizados para construir las variables de los trimestres proyectados.
+
+
 ### 🔎 Perfiles territoriales mediante K-Means
 
 El análisis histórico identifica cuatro perfiles de agrupación, entre los que destaca un grupo de regiones como Andalucía y Extremadura, caracterizadas por tasas de paro relativamente elevadas y costes laborales más bajos.
