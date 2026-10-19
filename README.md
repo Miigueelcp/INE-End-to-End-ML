@@ -1,6 +1,6 @@
 # 📊 Análisis y Predicción del Mercado Laboral en España (INE)
 
-> **Pipeline End-to-End aplicando XGBoost, clustering (K-Means) y explicabilidad (SHAP) sobre datos del INE para descubrir el impacto de la inflación y las diferencias regionales.**
+> **Pipeline End-to-End de Data Science para analizar y predecir el coste laboral en España mediante SQL, Machine Learning, clustering y explicabilidad con SHAP.**
 
 Este proyecto es una solución integral de Machine Learning diseñada para analizar y predecir el coste laboral por trabajador en España (por ambos sexos), y a su vez, analizar qué Comunidades Autónomas tienen mayor semejanza en relación con las tasas de paro y el coste salarial. Se utilizan datos oficiales macroeconómicos del Instituto Nacional de Estadística (INE). 
 
@@ -50,10 +50,12 @@ El código está estructurado siguiendo principios de modularidad y MLOps:
 
 ## 💡 Conclusiones Clave y Business Insights
 
-- **Efecto Inflacionario:** El análisis SHAP revela que el **Año** es el factor de mayor peso en la predicción, confirmando el impacto de la inflación estructural y las subidas del SMI en la última década.
+- **Efecto Inflacionario:** La evolución histórica (2008-2025) muestra como la inflación ha tenido peso durante los ultimos años, donde desde el 2008 hasta el 2025 el coste salarial ha subido hasta un un 48 %, donde desde la crisis del COVID-19 ha sido cuando ha subido más el coste salarial y por tanto la inflación. El análisis SHAP revela que el **Año** es el factor de mayor peso en la predicción, confirmando el impacto de la inflación estructural y las subidas del SMI en la última década.
 - **Brecha Territorial:** Comunidades como la Comunidad de Madrid, País Vasco y Cataluña tiran fuertemente al alza del coste laboral, reflejando una concentración de la riqueza y el empleo cualificado.
 - **El Motor Industrial:** A nivel sectorial, la Industria es el sector que presenta un mayor impacto positivo sobre los costes laborales, distanciándose notablemente del sector Servicios y Construcción.
 - **Evolución del Mapa Laboral (K-Means):** El clustering histórico (2008-2026) identificó 4 perfiles claros, destacando un grupo de regiones (como Andalucía o Extremadura) con altas tasas de paro y bajo coste. Sin embargo, el análisis del periodo reciente (2020-2025) muestra que, aunque estas CCAA siguen en el rango inferior de costes, han logrado reducir sustancialmente sus tasas de desempleo, haciendo desaparecer el clúster histórico de "alta crisis".
+- **Subvenciones**: CCAA como País Vasco, Asturias, Aragón y Andalucía son las que más euros por trabajador reciben de subvenciones del Estado. También vemos como en los años donde la crisis financiera global es cuando más subvención por trabajador ha habido, con un pico de 27 euros en el sector de la industria en el año 2011. Por otro lado, vemos como los recortes sufridos en España muestran como estas subvenciones fueron aminorando hasta con las entradas de neuvos gobiernos haciendo eque estas crezcan.
+- **Correlaciones**: La estructua de mercado nos muestra como la una fuerte tasa de empleo está ligada a una mucha menor tasa de paro. Así mismo, una mayot tasa de actividad esta fuertemente ligada a una mayot tasa de empleo. El coste laboral tiene una correlación negativa con la tasa de paro y positiva con la tasa de empleo, mostrando como los mercados laborales tensionados (alta ocupación y por tanto bajo paro) presionan los costes salariales al alza, mientras que los picos de desempleo tienden a contenerlos o reducirlos. La variable año  nos muestra una correlación positiva sólida con el coste laboral, esto nos muestra el encarecimeinto sostenido de lso lsalarios a lo largo de la serie histórica, impulsado por la inflación estructural y las actualzaciones del SMI. Paralelamente, el avance temporal regleja la recuperaicón macroeconómica general, correlacionando negativamente con el paro y postiivamente con el empleo. FInalmente la vairbale trimestre presenta coeficientes casi neturos en todas las métricas, siendo el más alto apenas con un 0.13 el coste laboral. Esto indica que la estacionalidad intra-anulao no sigue un patrón de correlación puramente lineal, lo que justifica perfectamente la elección metodolófgica de usar XGBOOST para detectar variaciones no lineales.
 
 ## 🚀 Cómo ejecutar el proyecto
 
