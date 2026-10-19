@@ -149,24 +149,25 @@ Estas relaciones son descriptivas y no implican causalidad. Además, la correlac
    ```
 Sustituye TuUsuario por tu nombre de usuario de GitHub y comprueba que el nombre del repositorio coincide con el publicado.
 
-### 2. **Instalar dependencias**
-Se recomienda crear un entorno virtual antes de instalar las librerías:
+### 2. Instalar las dependencias
 
-    ```bash
-   python -m venv .venv
-   ``
+Se recomienda crear un entorno virtual para aislar las dependencias del proyecto:
 
-En Windows:
+```bash
+python -m venv .venv
+```
 
-    ```bash
-   python -m venv .venv
-   ``
+**Activar el entorno virtual en Windows:**
 
-Instala las dependencias:
+```bash
+.venv\Scripts\activate
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+**Instalar las dependencias:**
+
+```bash
+pip install -r requirements.txt
+```
 
 ### 3. **Configurar MySQL**
 
@@ -174,19 +175,23 @@ Asegúrate de disponer de un servidor MySQL en ejecución y configura los parám
 
 Las credenciales deben gestionarse mediante variables de entorno o un archivo de configuración local excluido del control de versiones. **No publiques contraseñas ni credenciales de acceso en GitHub**.
 
-### 4. **Ejecutar pipelines**
+
+### 4. Ejecutar los pipelines
 
 Primero, ejecuta el pipeline de preparación e integración de los datos:
 
-     ```bash
-     python 01_data_pipeline.py
-     ```
+```bash
+python 01_data_pipeline.py
+```
 
 A continuación, ejecuta el pipeline de análisis y modelado:
-     ```bash
-     python 02_ml_pipeline.py
-     ```
+
+```bash
+python 02_ml_pipeline.py
+```
+
 La ejecución requiere que los archivos de datos estén disponibles en las rutas esperadas por el proyecto y que la conexión a MySQL esté correctamente configurada.
+
 
 
 ## 👨‍💻 Autor
