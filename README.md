@@ -88,8 +88,8 @@ Se aplica K-Means para identificar grupos de Comunidades Autónomas y sectores c
 
 Se comparan dos periodos:
 
-- **Histórico (2008–2026)**: permite estudiar los perfiles observados a lo largo de la serie temporal.
-- **Reciente (2020–2025)**: permite examinar los cambios en los perfiles territoriales durante los últimos años analizados.
+- **Histórico (2008–2026):** permite estudiar los perfiles observados a lo largo de la serie temporal.
+- **Reciente (2020–2025):** permite examinar los cambios en los perfiles territoriales durante los últimos años analizados.
 
 Esta comparación ayuda a identificar similitudes y diferencias en la evolución del mercado laboral, así como cambios en la agrupación de las regiones y los sectores.
 
