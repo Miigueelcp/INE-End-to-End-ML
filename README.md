@@ -57,10 +57,19 @@ Se realiza un análisis exploratorio para estudiar la evolución temporal del co
 
 El análisis incluye:
 
-- Comparación del coste laboral entre Comunidades Autónomas y sectores económicos.
-- Estudio de las subvenciones y bonificaciones de la Seguridad Social.
-- Análisis de distribuciones y valores atípicos.
-- Matrices de correlación de Pearson entre las variables del conjunto de datos.
+- **Comparación del coste laboral por Comunidad Autónoma y sector económico:** estudio de las diferencias en el coste laboral medio entre territorios y entre los sectores de industria, construcción y servicios.
+
+- **Análisis de las subvenciones y bonificaciones:** comparación de las cuantías medias por trabajador según la Comunidad Autónoma y el sector de actividad.
+
+- **Composición del coste laboral por sector:** análisis de los componentes principales del coste laboral, diferenciando entre el coste salarial total y otros costes laborales, como las cotizaciones y otros conceptos no salariales.
+
+- **Distribución porcentual del coste laboral por sector:** cálculo y representación del peso porcentual del coste salarial total y de los otros costes sobre el coste laboral total, con el objetivo de comparar la estructura de costes entre los distintos sectores económicos.
+
+- **Composición de otros costes laborales por sector:** estudio de los componentes de los otros costes laborales, considerando las cotizaciones obligatorias a la Seguridad Social, las percepciones no salariales y las subvenciones y bonificaciones de la Seguridad Social.
+
+- **Análisis de distribuciones y valores atípicos:** identificación de observaciones extremas y evaluación de su posible relación con acontecimientos económicos relevantes.
+
+- **Análisis de correlaciones de Pearson:** estudio de las relaciones lineales entre el coste laboral, las tasas de actividad, empleo y paro, y las variables temporales.
 
 Los valores atípicos se mantienen cuando se consideran compatibles con observaciones económicas reales, en lugar de eliminarlos automáticamente.
 
