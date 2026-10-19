@@ -122,19 +122,23 @@ La industria presenta, en los datos analizados, costes laborales medios superior
 Este resultado evidencia la importancia de considerar el sector económico al comparar los costes laborales entre territorios
 
 
+
 ### 🔮 Predicciones del coste laboral para Q3 y Q4 de 2026
 
-Se utiliza el modelo XGBoost seleccionado para estimar el coste laboral por trabajador durante el tercer y cuarto trimestre de 2026. El archivo `outputs/predicciones_q3_q4_2026.csv` contiene 102 estimaciones correspondientes a 17 Comunidades Autónomas, tres sectores económicos y dos trimestres.
+Se utiliza el modelo XGBoost seleccionado para estimar el coste laboral por trabajador durante el tercer y cuarto trimestre de 2026. El archivo `outputs/predicciones_q3_q4_2026.csv` contiene 102 estimaciones, correspondientes a 17 Comunidades Autónomas, tres sectores económicos y dos trimestres.
 
-**Evolución trimestral:** la media simple de las 51 combinaciones de Comunidad Autónoma y sector aumenta de 3.059,84 € en Q3 a 3.311,71 € en Q4, lo que representa una variación estimada del 8,23 % (251,87 €). Este resultado refleja el comportamiento de las predicciones generadas y no constituye una estimación ponderada del coste laboral medio nacional.
+- **Evolución trimestral:** la media simple de las 51 combinaciones de Comunidad Autónoma y sector aumenta de 3.059,84 € en Q3 a 3.311,71 € en Q4, lo que representa un incremento estimado del 8,23 % (251,87 €). Esta media no constituye una estimación ponderada del coste laboral medio nacional.
 
-**Diferencias sectoriales:** la industria presenta los costes laborales medios estimados más elevados, alcanzando los 3.629,09 € en Q4. La construcción registra el mayor crecimiento porcentual entre ambos trimestres (+9,43 %), mientras que los servicios mantienen los niveles medios más bajos.
+- **Diferencias sectoriales:** la industria presenta los costes laborales medios estimados más elevados, alcanzando los 3.629,09 € en Q4. La construcción registra el mayor incremento porcentual entre ambos trimestres (+9,43 %), mientras que los servicios mantienen los niveles medios más bajos.
 
-**Diferencias territoriales:** el País Vasco (3.968,01 €), la Comunidad de Madrid (3.904,10 €) y Cataluña (3.715,57 €) presentan los mayores costes laborales medios estimados para Q4. Por el contrario, Extremadura registra el menor valor medio, con 2.735,04 €.
+- **Diferencias territoriales:** el País Vasco (3.968,01 €), la Comunidad de Madrid (3.904,10 €) y Cataluña (3.715,57 €) presentan los mayores costes laborales medios estimados para Q4. Por el contrario, Extremadura registra el menor valor medio, con 2.735,04 €.
 
-**Variabilidad regional:** Illes Balears presenta el mayor incremento medio estimado entre Q3 y Q4 (+11,37 %), mientras que Extremadura muestra el menor (+2,68 %). Estas diferencias ponen de manifiesto la heterogeneidad territorial de las proyecciones.
+- **Variabilidad regional:** Illes Balears presenta el mayor incremento medio estimado entre Q3 y Q4 (+11,37 %), mientras que Extremadura muestra el menor (+2,68 %). Estas diferencias reflejan la heterogeneidad territorial de las proyecciones.
 
-**Limitaciones:** los valores recogidos en el archivo son estimaciones generadas por el modelo y no datos oficiales observados del INE. Los resultados deben interpretarse teniendo en cuenta el rendimiento predictivo del modelo, la estrategia de validación temporal y los supuestos utilizados para construir las variables de los trimestres proyectados.
+- **Evolución de los indicadores del mercado laboral:** además del coste laboral estimado, el archivo recoge las tasas de actividad, empleo y paro asociadas a los escenarios de Q3 y Q4. La media simple de las 17 Comunidades Autónomas muestra que la tasa de actividad pasa del 58,44 % al 58,00 %, mientras que la tasa de empleo disminuye del 53,11 % al 52,44 %. Por su parte, la tasa de paro aumenta del 9,13 % al 9,59 %. Estas variaciones muestran que el incremento estimado del coste laboral no coincide necesariamente con una mejora de los indicadores del mercado laboral.
+
+**Limitaciones:** los valores del archivo son estimaciones generadas mediante el procedimiento de modelado y no datos oficiales observados del INE. Las variaciones descritas tienen carácter exploratorio y no permiten establecer relaciones causales. Asimismo, los indicadores de actividad, empleo y paro deben interpretarse teniendo en cuenta cómo se han obtenido los valores correspondientes a los trimestres analizados. La interpretación de las predicciones también debe considerar el rendimiento del modelo en la validación temporal y los supuestos empleados para construir las variables de los periodos proyectados.
+
 
 
 ### 🔎 Perfiles territoriales mediante K-Means
