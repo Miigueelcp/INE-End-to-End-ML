@@ -198,7 +198,7 @@ La ejecución requiere que los archivos de datos estén disponibles en las rutas
 
  **Miguel Ángel Cumplido Pavón** 
  
- [LinkedIn](https://www.linkedin.com/in/miguelángelcumplidopavón)*
+ [LinkedIn](https://www.linkedin.com/in/miguelángelcumplidopavón)
 
 
 
