@@ -34,8 +34,8 @@ El código se organiza en módulos para separar la preparación de datos, el an�
 ├── 03_resumen_predicciones.py # Resumen de los resultados de Q3 y Q4 de 2026
 │
 ├── data/
-│   ├── coste_laboral_ccaa_sector.csv
-│   └── epa_tasas_provincia_sexo.csv
+│   ├── Coste laboral por trabajador, comunidad autónoma, sectores de actividad.csv
+│   └── Tasas de actividad, paro y empleo por provincia y sexo.csv
 │
 ├── outputs/
 │   └── predicciones_q3_q4_2026.csv  # Predicciones de coste laboral para Q3 y Q4
