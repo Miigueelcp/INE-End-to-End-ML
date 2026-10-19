@@ -22,23 +22,39 @@ El proyecto combina **Machine Learning supervisado y no supervisado**, utilizand
 
 ## 📁 Arquitectura del Proyecto
 
-El código se organiza en módulos para separar la preparación de datos, el análisis exploratorio, el modelado y la visualización.
+El código se organiza en módulos para separar la preparación de datos, el análisis exploratorio, el modelado y la visualización. Además, se incluyen los scripts SQL, los datos originales del INE y el archivo con las predicciones generadas.
 
 ```text
-├── 01_data_pipeline.py       # Pipeline de extracción, transformación y carga (ETL)
-├── 02_ml_pipeline.py         # Pipeline de entrenamiento, evaluación y clustering
-├── .gitignore                # Archivos excluidos del control de versiones
-├── requirements.txt          # Dependencias del proyecto
+Spain-Labor-Cost-Predictor/
+│
+├── README.md
+├── requirements.txt           # Dependencias del proyecto
+├── .gitignore                 # Archivos excluidos del control de versiones
+│
+├── 01_data_pipeline.py        # Pipeline de extracción, transformación y carga (ETL)
+├── 02_ml_pipeline.py          # Análisis, entrenamiento y generación de predicciones
+├── 03_resumen_predicciones.py # Resumen de los resultados de Q3 y Q4 de 2026
+│
+├── data/
+│   ├── coste_laboral_ccaa_sector.csv
+│   └── epa_tasas_provincia_sexo.csv
+│
+├── outputs/
+│   └── predicciones_q3_q4_2026.csv  # Predicciones de coste laboral para Q3 y Q4
+│
+├── sql/
+│   └── costes_epa_integrado.sql     # Vista SQL que integra los datos de costes y EPA
+│
 └── src/
     ├── __init__.py
-    ├── database.py           # Conexión y operaciones con MySQL
-    ├── data_loader.py        # Carga de los datos originales
-    ├── cleaning.py           # Limpieza y transformación de datos
-    ├── eda.py                # Análisis exploratorio de datos
-    ├── ml_preprocessing.py   # Preparación de variables para los modelos
-    ├── ml_models.py          # Entrenamiento y predicción
-    ├── ml_clustering.py      # Segmentación mediante K-Means
-    └── visualizations.py     # Gráficos y análisis SHAP
+    ├── database.py            # Conexión y operaciones con MySQL
+    ├── data_loader.py         # Carga de los datos originales
+    ├── cleaning.py            # Limpieza y transformación de datos
+    ├── eda.py                 # Análisis exploratorio de datos
+    ├── ml_preprocessing.py    # Preparación de variables para los modelos
+    ├── ml_models.py           # Entrenamiento, evaluación y predicción
+    ├── ml_clustering.py       # Segmentación mediante K-Means
+    └── visualizations.py      # Gráficos y análisis SHAP
 ```
 
 ## 🧠 Fases del Proyecto
