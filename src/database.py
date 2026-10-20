@@ -13,13 +13,13 @@ def exportar_a_mysql(df_coste_limpio, df_epa_ccaa, usuario='root', puerto='3306'
     if not contrasena:
         raise ValueError("❌ ERROR: Contraseña no encontrada. Configura la variable de entorno MYSQL_PASSWORD.")
 
-    # 2. Configuración del servidor
+    # Configuración del servidor
     cadena_servidor = f'mysql+pymysql://{usuario}:{contrasena}@localhost:{puerto}'
     engine_servidor = create_engine(cadena_servidor)
 
     print('\nConectando a MySQL y preparando entorno...')
 
-    # 3. Creamos la base de datos de forma segura
+    # Creamos la base de datos de forma segura
     try:
         with engine_servidor.connect() as conexion:
             conexion.execute(text(f"CREATE DATABASE IF NOT EXISTS {nombre_bd};"))
@@ -28,11 +28,11 @@ def exportar_a_mysql(df_coste_limpio, df_epa_ccaa, usuario='root', puerto='3306'
         print("❌ Error al conectar o crear la base de datos. ¿Está MySQL encendido?")
         raise e
 
-    # 4. Conectamos directamente a la nueva base de datos
+    # Conectamos directamente a la nueva base de datos
     cadena_bd = f'{cadena_servidor}/{nombre_bd}'
     engine_bd = create_engine(cadena_bd)
 
-    # 5. Exportamos las tablas
+    # Exportamos las tablas
     print('Exportando la tabla de Costes...')
     df_coste_limpio.to_sql(
         name='costes_laborales',
@@ -57,20 +57,20 @@ def extraer_vista_ml(usuario='root', puerto='3306', nombre_bd='portfolio_ine'):
     Se conecta a la base de datos MySQL y extrae la vista o tabla 'costes_epa_integrado' 
     para iniciar la fase de Machine Learning.
     """
-    # 1. Recuperamos la contraseña 
+    # Recuperamos la contraseña 
     contrasena = os.getenv('MYSQL_PASSWORD','') 
     
     if not contrasena:
         raise ValueError("❌ ERROR: Contraseña no encontrada.")
 
-    # 2. Creamos el motor conectado específicamente a tu base de datos
+    # Creamos el motor conectado específicamente a tu base de datos
     cadena_bd = f'mysql+pymysql://{usuario}:{contrasena}@localhost:{puerto}/{nombre_bd}'
     engine_bd = create_engine(cadena_bd)
 
     print('\nExtrayendo la vista desde MySQL para Machine Learning...')
     query_ml = "SELECT * FROM costes_epa_integrado;"
     
-    # 3. Extraemos los datos
+    # Extraemos los datos
     try:
         df_tabla = pd.read_sql(query_ml, con=engine_bd)
         print("✅ Datos extraídos con éxito.")
