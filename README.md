@@ -179,6 +179,63 @@ Se comparan dos periodos:
 
 Esta comparación ayuda a identificar similitudes y diferencias en la evolución del mercado laboral, así como cambios en la agrupación de las regiones y los sectores.
 
+## 📊 Visualizaciones del proyecto
+
+### 1. Análisis exploratorio de datos (EDA)
+
+#### Coste laboral por Comunidad Autónoma y sector
+
+Comparación del coste laboral medio entre las 17 Comunidades Autónomas y los sectores de industria, construcción y servicios.
+
+![Coste laboral por CCAA y sector](images/coste_laboral_ccaa_sector.png)
+
+#### Evolución temporal del coste laboral
+
+Análisis de la evolución del coste laboral a lo largo de la serie histórica para identificar tendencias y cambios en el mercado laboral español.
+
+![Evolución del coste laboral](images/evolucion_coste_laboral.png)
+
+#### Matriz de correlaciones
+
+Estudio de las relaciones lineales entre el coste laboral, las tasas de actividad, empleo y paro, y las variables temporales.
+
+![Matriz de correlaciones](images/correlaciones_variables.png)
+
+### 2. Explicabilidad del modelo XGBoost (SHAP)
+
+#### Distribución de los valores SHAP
+
+El gráfico *Beeswarm* permite analizar cómo influye cada variable en las predicciones del modelo, mostrando tanto la importancia de las características como el sentido de su contribución.
+
+![Gráfico SHAP Beeswarm](images/shap_beeswarm.png)
+
+#### Importancia de las variables
+
+Representación de la importancia de las variables a partir de sus valores SHAP medios absolutos, para identificar las características con mayor influencia global en las predicciones.
+
+![Importancia de variables mediante SHAP](images/shap_importancia.png)
+
+### 3. Aprendizaje no supervisado: K-Means
+
+#### Clustering histórico (2008–2026)
+
+Identificación de perfiles de Comunidades Autónomas y sectores según las características analizadas en el periodo histórico.
+
+![Clustering histórico](images/clustering_historico.png)
+
+#### Clustering reciente (2020–2025)
+
+Comparación de los perfiles identificados en el periodo reciente para estudiar posibles cambios en las similitudes entre territorios y sectores.
+
+![Clustering reciente](images/clustering_reciente.png)
+
+### 4. Predicciones del coste laboral para Q3 y Q4 de 2026
+
+Comparación del coste laboral medio estimado por trabajador para los sectores de industria, construcción y servicios entre el tercer y cuarto trimestre de 2026. Los valores representan la media aritmética de las estimaciones correspondientes a las 17 Comunidades Autónomas, sin ponderación por población ocupada o número de trabajadores.
+
+![Predicciones del coste laboral para Q3 y Q4 de 2026](images/predicciones_q3_q4_2026.png)
+
+
 ## 💡 Principales resultados e insights
 
 ### 📈 Evolución del coste laboral
