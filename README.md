@@ -240,6 +240,26 @@ Comparación del coste laboral medio estimado por trabajador para los sectores d
 
 ## 💡 Principales resultados e insights
 
+
+### 🤖 Evaluación comparativa de los modelos predictivos
+
+Se comparan tres modelos de regresión para estimar el coste laboral por trabajador: Regresión Lineal, Random Forest y XGBoost. La evaluación se realiza mediante tres métricas: MAE, RMSE y coeficiente de determinación (R²).
+
+| Modelo | MAE (€) | RMSE (€) | R² |
+|---|---:|---:|---:|
+| **XGBoost** | **157,528** | **206,791** | **0,835** |
+| Random Forest | 197,327 | 250,632 | 0,758 |
+| Regresión lineal | 330,658 | 403,056 | 0,374 |
+
+**XGBoost obtiene el mejor rendimiento de los tres modelos evaluados**, con un MAE de 157,528 €, un RMSE de 206,791 € y un R² de 0,835. Esto significa que, en el conjunto de evaluación, presenta un menor error de predicción y explica aproximadamente el 83,5 % de la variabilidad observada en la variable objetivo.
+
+En comparación con Random Forest, XGBoost reduce el MAE aproximadamente un 20,2 % y el RMSE un 17,5 %. La diferencia es aún mayor respecto a la regresión lineal, lo que sugiere que un modelo capaz de representar relaciones no lineales se adapta mejor a los datos utilizados.
+
+A partir de estos resultados, **se selecciona XGBoost para generar las estimaciones del coste laboral de Q3 y Q4 de 2026**.
+
+*Nota metodológica: estos resultados corresponden al conjunto de evaluación utilizado. Su capacidad de generalización debe interpretarse teniendo en cuenta la división temporal de los datos y las limitaciones propias de las predicciones futuras.*
+
+
 ### 📈 Evolución del coste laboral
 Entre 2008 y 2025, el coste salarial experimentó un incremento acumulado aproximado del **48 %**, según los datos analizados. La evolución temporal presenta una asociación positiva con el coste laboral, reflejando su incremento sostenido a lo largo del periodo.
 
