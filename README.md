@@ -44,6 +44,17 @@ El código se organiza en módulos para separar la preparación de datos, el an�
 │
 ├── sql/
 │   └── costes_epa_integrado.sql     # Vista SQL que integra los datos de costes y EPA
+│ 
+├── images/
+│   ├── coste_laboral_ccaa_sector.png
+│   ├── evolucion_coste_laboral.png
+│   ├── correlaciones_variables.png
+│   ├── shap_beeswarm.png
+│   ├── shap_importancia.png
+│   ├── clustering_historico.png
+│   ├── clustering_reciente.png
+│   └── predicciones_q3_q4_2026.png
+│   
 │
 └── src/
     ├── __init__.py
