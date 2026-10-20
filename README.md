@@ -68,7 +68,7 @@ El proyecto utiliza dos conjuntos de datos del Instituto Nacional de Estadístic
 | `ano` | Año de referencia del dato. |
 | `trimestre` | Trimestre de referencia, del 1 al 4. |
 | `sectores_actividad` | Sector económico: industria, construcción o servicios. Los datos originales también incluyen el agregado de todos los sectores. |
-| `coste` | Componente del coste laboral analizado, como el coste laboral total, el coste salarial total, las cotizaciones obligatorias o las subvenciones y bonificaciones. |
+| `coste` | Componente del coste laboral analizado, como el coste laboral total, el coste salarial total, el coste salarial ordinario, otros costes, el coste por percepciones no salariales, las cotizaciones obligatoria o las subvenciones y bonificaciones. |
 | `total` | Valor registrado para el componente del coste, expresado en euros por trabajador. |
 
 ### 2. Variables de la Encuesta de Población Activa (EPA)
@@ -103,7 +103,7 @@ El archivo `outputs/predicciones_q3_q4_2026.csv` contiene las estimaciones corre
 
 El archivo contiene 102 estimaciones correspondientes a 17 Comunidades Autónomas, tres sectores económicos y dos trimestres.
 
-**Nota metodológica:** el coste laboral se estima mediante XGBoost, mientras que las tasas de actividad, empleo y paro se obtienen mediante un procedimiento basado en promedios históricos. Por tanto, estas tasas no son predicciones realizadas por XGBoost, sino estimaciones calculadas de forma independiente. Los resultados deben interpretarse teniendo en cuenta las limitaciones de ambos procedimientos.
+**Nota metodológica:** Es importante distinguir la naturaleza de las proyecciones presentadas. Mientras que el `coste_estimado_euros` es el resultado de la inferencia de nuestro modelo de Machine Learning (XGBoost), las métricas del mercado de trabajo (tasas de actividad, empleo y paro) se han calculado como variables de contexto mediante inferencia estadística basada en promedios históricos estacionales. Por tanto, los resultados deben interpretarse considerando la diferencia entre la capacidad de generalización del algoritmo no lineal y la asunción de continuidad de las tendencias macroeconómicas tradicionales.
 
 
 ## 🧠 Fases del Proyecto
