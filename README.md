@@ -1,14 +1,16 @@
 # 📊 Análisis y Predicción del Mercado Laboral en España (INE)
 
-> **Pipeline End-to-End para analizar y predecir el coste laboral en España mediante SQL, Machine Learning, clustering y explicabilidad con SHAP.**
+> **Pipeline End-to-End de datos y Machine Learning para analizar y predecir el coste laboral en España mediante SQL, XGBoost, clustering y explicabilidad con SHAP.**
 
 ## 📌 Descripción del proyecto
 
-Este proyecto desarrolla un flujo de trabajo completo de **Data Science** a partir de datos oficiales del Instituto Nacional de Estadística (INE), con el objetivo de analizar la evolución del coste laboral por trabajador en España, estudiar las diferencias entre Comunidades Autónomas y sectores económicos, e identificar patrones en el mercado laboral.
+Este proyecto implementa un pipeline de datos y modelado predictivo a partir de información oficial del Instituto Nacional de Estadística (INE), con el objetivo de analizar la evolución del coste laboral por trabajador en España, estudiar las diferencias entre Comunidades Autónomas y sectores económicos, e identificar patrones en el mercado laboral.
 
 Se integran datos del coste laboral y de las tasas de actividad, paro y empleo de la Encuesta de Población Activa (EPA). A partir de estos datos, se construye un proceso que abarca desde la extracción, limpieza e integración de la información mediante SQL hasta el análisis exploratorio, el entrenamiento de modelos predictivos y la interpretación de sus resultados.
 
-El proyecto combina **Machine Learning supervisado y no supervisado**, utilizando modelos de regresión para predecir el coste laboral, K-Means para identificar perfiles territoriales y SHAP para interpretar las predicciones del modelo seleccionado.
+El proyecto combina **ingeniería de datos y aprendizaje automático**, utilizando modelos de regresión para predecir el coste laboral, K-Means para identificar perfiles territoriales y SHAP para interpretar las predicciones del modelo seleccionado.
+
+**Ámbito territorial:** el análisis se limita a las 17 Comunidades Autónomas de España, ya que el conjunto de datos del coste laboral utilizado no incluye las ciudades autónomas de Ceuta y Melilla. Por coherencia metodológica, ambas ciudades autónomas también se excluyen de los datos de la EPA, de forma que los dos conjuntos de datos compartan el mismo ámbito territorial.
 
 ## 🛠️ Tecnologías y Herramientas
 
