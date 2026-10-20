@@ -334,6 +334,24 @@ El análisis de correlaciones de Pearson muestra las siguientes relaciones:
 
 Estas relaciones son descriptivas y no implican causalidad. Además, la correlación lineal débil del trimestre no descarta la existencia de patrones estacionales o relaciones no lineales, que pueden estudiarse mediante modelos predictivos.
 
+## 🎯 Conclusiones y trabajo futuro
+
+Este proyecto ha permitido desarrollar un pipeline End-to-End para analizar el mercado laboral español a partir de datos oficiales del Instituto Nacional de Estadística (INE), combinando técnicas de ingeniería de datos, análisis exploratorio y aprendizaje automático.
+
+La integración de los datos del coste laboral y de la Encuesta de Población Activa (EPA) mediante Python y MySQL ha permitido construir una base de análisis común para estudiar la evolución temporal del coste laboral y las diferencias entre las 17 Comunidades Autónomas y los principales sectores económicos.
+
+Los resultados del análisis exploratorio muestran una evolución creciente del coste laboral a lo largo del periodo estudiado, así como diferencias territoriales y sectoriales. El estudio de las correlaciones permite identificar asociaciones entre los indicadores analizados, aunque estas relaciones son descriptivas y no implican causalidad.
+
+En el apartado predictivo, **XGBoost obtuvo el mejor rendimiento entre los tres modelos evaluados**, con un MAE de 157,53 €, un RMSE de 206,79 € y un coeficiente de determinación (\(R^2\)) de 0,835. Estos resultados justifican su selección para generar las estimaciones del coste laboral correspondientes al tercer y cuarto trimestre de 2026, dentro de las condiciones del conjunto de evaluación utilizado.
+
+Por otra parte, SHAP ha permitido examinar la contribución de las variables a las estimaciones del modelo, mientras que K-Means ha facilitado la identificación de agrupaciones de observaciones con características similares según el coste laboral y la tasa de paro. La comparación entre el periodo histórico y el reciente permite explorar posibles diferencias en los patrones identificados.
+
+**No obstante, los resultados deben interpretarse teniendo en cuenta varias limitaciones.** El ámbito del estudio se restringe a las 17 Comunidades Autónomas y considera conjuntamente a ambos sexos. Además, las tasas de actividad, empleo y paro se estiman mediante promedios históricos y no mediante XGBoost. La agregación de las tasas provinciales de la EPA mediante la media aritmética constituye una aproximación descriptiva que puede diferir de los indicadores autonómicos oficiales. Asimismo, las estimaciones futuras están sujetas al error del modelo y no deben interpretarse como datos observados ni como predicciones oficiales del INE.
+
+Como líneas de mejora, sería interesante contrastar las estimaciones con los datos oficiales cuando estén disponibles, ampliar la validación temporal de los modelos, estudiar alternativas para mejorar la estimación de los indicadores laborales y profundizar en el análisis de los patrones territoriales y sectoriales.
+
+En conjunto, el proyecto integra las principales etapas de un flujo de trabajo de datos, desde la preparación e integración de las fuentes hasta la evaluación, interpretación y comunicación de resultados. Esto permite aplicar de forma práctica herramientas de **ingeniería de datos y Machine Learning a un problema de interés económico y social**.
+
 
 ## 🚀 Cómo ejecutar el proyecto
 
