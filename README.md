@@ -342,7 +342,7 @@ La integración de los datos del coste laboral y de la Encuesta de Población Ac
 
 Los resultados del análisis exploratorio muestran una evolución creciente del coste laboral a lo largo del periodo estudiado, así como diferencias territoriales y sectoriales. El estudio de las correlaciones permite identificar asociaciones entre los indicadores analizados, aunque estas relaciones son descriptivas y no implican causalidad.
 
-En el apartado predictivo, **XGBoost obtuvo el mejor rendimiento entre los tres modelos evaluados**, con un MAE de 157,53 €, un RMSE de 206,79 € y un coeficiente de determinación (\(R^2\)) de 0,835. Estos resultados justifican su selección para generar las estimaciones del coste laboral correspondientes al tercer y cuarto trimestre de 2026, dentro de las condiciones del conjunto de evaluación utilizado.
+En el apartado predictivo, **XGBoost obtuvo el mejor rendimiento entre los tres modelos evaluados**, con un MAE de 157,53 €, un RMSE de 206,79 € y un coeficiente de determinación R² de 0,835. Estos resultados justifican su selección para generar las estimaciones del coste laboral correspondientes al tercer y cuarto trimestre de 2026, dentro de las condiciones del conjunto de evaluación utilizado.
 
 Por otra parte, SHAP ha permitido examinar la contribución de las variables a las estimaciones del modelo, mientras que K-Means ha facilitado la identificación de agrupaciones de observaciones con características similares según el coste laboral y la tasa de paro. La comparación entre el periodo histórico y el reciente permite explorar posibles diferencias en los patrones identificados.
 
