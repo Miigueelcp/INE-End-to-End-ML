@@ -24,8 +24,6 @@ Los datos utilizados en este proyecto proceden del **Instituto Nacional de Estad
 
 Los archivos CSV utilizados en el análisis se encuentran en la carpeta `data/` del repositorio.
 
-**Nota metodológica:**  los datos originales de la EPA están desglosados por provincia. Para integrarlos con los datos del coste laboral, se calcula la media aritmética de las tasas provinciales correspondientes a cada Comunidad Autónoma, periodo e indicador, considerando la categoría de ambos sexos. Por tanto, los valores resultantes constituyen una aproximación descriptiva y no necesariamente coinciden con las tasas autonómicas oficiales publicadas por el INE.
-
 
 ## 🛠️ Tecnologías y Herramientas
 
