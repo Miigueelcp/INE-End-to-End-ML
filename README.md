@@ -4,27 +4,29 @@
 
 ## 📌 Descripción del proyecto
 
-Este proyecto implementa un pipeline de datos y modelado predictivo a partir de información oficial del Instituto Nacional de Estadística (INE), con el objetivo de analizar la evolución del coste laboral por trabajador en España, estudiar las diferencias entre Comunidades Autónomas y sectores económicos, e identificar patrones en el mercado laboral.
+Este proyecto implementa un pipeline de datos y modelado predictivo a partir de información oficial del Instituto Nacional de Estadística (INE). Su objetivo es analizar la evolución del coste laboral por trabajador en España, estudiar las diferencias entre Comunidades Autónomas y sectores económicos e identificar patrones en el mercado laboral.
 
-Se integran datos del coste laboral y de las tasas de actividad, paro y empleo de la Encuesta de Población Activa (EPA). A partir de estos datos, se construye un proceso que abarca desde la extracción, limpieza e integración de la información mediante SQL hasta el análisis exploratorio, el entrenamiento de modelos predictivos y la interpretación de sus resultados.
+Se integran datos del coste laboral y de las tasas de actividad, empleo y paro de la Encuesta de Población Activa (EPA). El proceso abarca la carga, limpieza y transformación de los datos, su integración mediante MySQL, el análisis exploratorio y la aplicación de técnicas de Machine Learning.
 
-El proyecto combina **ingeniería de datos y aprendizaje automático**, utilizando modelos de regresión para predecir el coste laboral, K-Means para identificar perfiles territoriales y SHAP para interpretar las predicciones del modelo seleccionado.
+El proyecto combina **ingeniería de datos y aprendizaje automático:** se comparan modelos de regresión para estimar el coste laboral, se aplica K-Means para identificar perfiles territoriales y se emplea SHAP para interpretar las predicciones del modelo seleccionado
 
-**Ámbito territorial:** el análisis se limita a las 17 Comunidades Autónomas de España, ya que el conjunto de datos del coste laboral utilizado no incluye las ciudades autónomas de Ceuta y Melilla. Por coherencia metodológica, ambas ciudades autónomas también se excluyen de los datos de la EPA, de forma que los dos conjuntos de datos compartan el mismo ámbito territorial.
+**Ámbito territorial:** el análisis se limita a las 17 Comunidades Autónomas de España, ya que el conjunto de datos del coste laboral utilizado no incluye las ciudades autónomas de Ceuta y Melilla. Por coherencia metodológica, ambas ciudades también se excluyen de los datos de la EPA, de modo que las dos fuentes compartan el mismo ámbito territorial.
+
+**Ámbito poblacional:** el estudio se realiza considerando conjuntamente a ambos sexos, utilizando la categoría `ambos_sexos` de los datos de la EPA. Por tanto, las tasas de actividad, empleo y paro, así como los análisis y modelos desarrollados, no se desglosan por sexo. El objetivo es estudiar el comportamiento general del mercado laboral en las 17 Comunidades Autónomas y sus diferencias por sector económico.
 
 ## 🛠️ Tecnologías y Herramientas
 
 * **Lenguaje:** Python 3.x
-* **Manipulación de Datos:** Pandas, NumPy
+* **Manipulación de Datos:** Pandas, NumPy y SciPy
 * **Base de Datos:** MySQL / SQLAlchemy
 * **Machine Learning:** Scikit-Learn, XGBoost
 * **Explicabilidad (XAI):** SHAP
 * **Visualización:** Matplotlib, Seaborn, AdjustText
-* **Análisis estadístico**: correlaciones, análisis de distribuciones y detección de valores atípicos.
+* **Análisis estadístico**: correlaciones, distribuciones y detección de valores atípicos.
 
 ## 📁 Arquitectura del Proyecto
 
-El código se organiza en módulos para separar la preparación de datos, el análisis exploratorio, el modelado y la visualización. Además, se incluyen los scripts SQL, los datos originales del INE y el archivo con las predicciones generadas.
+El código se organiza en módulos para separar la preparación de datos, el análisis exploratorio, el modelado y la visualización. También se incluyen los datos originales, el script SQL utilizado para integrar las fuentes y el archivo con las predicciones generadas.
 
 ```text
 ├── README.md
@@ -70,7 +72,7 @@ El código se organiza en módulos para separar la preparación de datos, el an�
 
 ## 📋 Descripción de las variables
 
-El proyecto utiliza dos conjuntos de datos del Instituto Nacional de Estadística (INE): uno relacionado con el coste laboral por trabajador y otro con las tasas de actividad, empleo y paro de la población. Tras la limpieza y transformación, ambos conjuntos se integran para realizar el análisis exploratorio y entrenar los modelos de Machine Learning.
+El proyecto utiliza dos conjuntos de datos del INE: uno relacionado con el coste laboral por trabajador y otro con las tasas de actividad, empleo y paro de la EPA. Tras la limpieza y transformación, ambas fuentes se integran para realizar el análisis exploratorio y preparar los datos para el modelado.
 
 ### 1. Variables del coste laboral
 
@@ -95,12 +97,12 @@ El proyecto utiliza dos conjuntos de datos del Instituto Nacional de Estadístic
 | `tasas` | Indicador del mercado laboral: tasa de actividad, tasa de empleo o tasa de paro. |
 | `total` | Valor numérico del indicador, expresado como porcentaje. |
 
-**Nota metodológica:** los datos originales de la EPA están desglosados por provincia. Para integrarlos con la información del coste laboral, se agrupan por Comunidad Autónoma, periodo, sexo e indicador. En esta transformación se utiliza la media aritmética de las tasas provinciales, por lo que los valores resultantes son una aproximación descriptiva y no necesariamente coinciden con las tasas autonómicas oficiales publicadas por el INE.
+**Nota metodológica:** los datos originales de la EPA están desglosados por provincia. Para integrarlos con la información del coste laboral, las tasas se agrupan por Comunidad Autónoma, periodo, sexo e indicador mediante la media aritmética provincial. Por tanto, estos valores constituyen una aproximación descriptiva y no necesariamente coinciden con las tasas autonómicas oficiales publicadas por el INE.
 
 
 ### 3. Variables del archivo de predicciones
 
-El archivo `outputs/predicciones_q3_q4_2026.csv` contiene las estimaciones correspondientes al tercer y cuarto trimestre de 2026. Se combinan las predicciones del modelo XGBoost para el coste laboral con las estimaciones de las tasas del mercado laboral obtenidas mediante promedios históricos.
+El archivo `outputs/predicciones_q3_q4_2026.csv` contiene las estimaciones correspondientes al tercer y cuarto trimestre de 2026. El coste laboral se estima mediante XGBoost, mientras que las tasas del mercado laboral se calculan mediante un procedimiento basado en medias históricas.
 
 | Variable | Descripción |
 |---|---|
@@ -120,7 +122,7 @@ El archivo contiene 102 estimaciones correspondientes a 17 Comunidades Autónoma
 
 ## 🧠 Fases del Proyecto
 
-### 1. **Ingeniería de Datos y SQL (ETL)**
+### 1. Ingeniería de Datos y SQL (ETL)
 
    - Carga de los conjuntos de datos originales del INE.
    - Limpieza y normalización de nombres, categorías y variables.
@@ -128,7 +130,7 @@ El archivo contiene 102 estimaciones correspondientes a 17 Comunidades Autónoma
    - Integración de las tablas mediante MySQL y SQLAlchemy.
    - Extracción de los datos integrados a Python y transformación al formato adecuado para el modelado.
 
-### 2. **Análisis exploratorio de datos (EDA)**
+### 2. Análisis exploratorio de datos (EDA)
 
 Se realiza un análisis exploratorio para estudiar la evolución temporal del coste laboral, las diferencias territoriales y sectoriales, y su relación con los principales indicadores del mercado laboral.
 
@@ -150,7 +152,7 @@ El análisis incluye:
 
 Los valores atípicos se mantienen cuando se consideran compatibles con observaciones económicas reales, en lugar de eliminarlos automáticamente.
 
-### 3. **Modelado predictivo supervisado**
+### 3. Modelado predictivo supervisado
 
 Se comparan distintos modelos de regresión para predecir el coste laboral por trabajador:
 
@@ -162,13 +164,13 @@ Se comparan distintos modelos de regresión para predecir el coste laboral por t
 
 Para respetar el orden temporal de los datos, se emplea una división basada en el tiempo (time-based split), utilizando información hasta 2024 para el entrenamiento. Asimismo, se realizan proyecciones futuras teniendo en cuenta las variaciones estacionales observadas históricamente.
 
-### 4. **Explicabilidad del modelo (SHAP)**
+### 4. Explicabilidad del modelo (SHAP)
 
 Se utilizan valores SHAP *(SHapley Additive exPlanations)* para interpretar las predicciones de XGBoost e identificar qué variables tienen mayor influencia en las estimaciones.
 
 Se emplean gráficos *Beeswarm* y de importancia mediante barras para analizar la contribución de las variables y comprender mejor el comportamiento del modelo.
 
-### 5. **Aprendizaje no supervisado: K-Means**
+### 5. Aprendizaje no supervisado: K-Means
 
 Se aplica K-Means para identificar grupos de Comunidades Autónomas y sectores con características similares en términos de coste laboral y tasa de paro.
 
