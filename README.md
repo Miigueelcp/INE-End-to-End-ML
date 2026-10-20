@@ -14,6 +14,19 @@ El proyecto combina **ingeniería de datos y aprendizaje automático:** se compa
 
 **Ámbito poblacional:** el estudio se realiza considerando conjuntamente a ambos sexos, utilizando la categoría `ambos_sexos` de los datos de la EPA. Por tanto, las tasas de actividad, empleo y paro, así como los análisis y modelos desarrollados, no se desglosan por sexo. El objetivo es estudiar el comportamiento general del mercado laboral en las 17 Comunidades Autónomas y sus diferencias por sector económico.
 
+
+## 📚 Fuente de los datos
+
+Los datos utilizados en este proyecto proceden del **Instituto Nacional de Estadística (INE)**:
+
+- **Coste laboral por trabajador, comunidad autónoma y sectores de actividad:** [Consultar datos en el INE](https://www.ine.es/jaxiT3/Tabla.htm?t=6061).
+- **Tasas de actividad, paro y empleo por provincia y sexo (EPA):** [Consultar datos en el INE](https://www.ine.es/jaxiT3/Tabla.htm?t=65349).
+
+Los archivos CSV utilizados en el análisis se encuentran en la carpeta `data/` del repositorio.
+
+**Nota metodológica:**  los datos originales de la EPA están desglosados por provincia. Para integrarlos con los datos del coste laboral, se calcula la media aritmética de las tasas provinciales correspondientes a cada Comunidad Autónoma, periodo e indicador, considerando la categoría de ambos sexos. Por tanto, los valores resultantes constituyen una aproximación descriptiva y no necesariamente coinciden con las tasas autonómicas oficiales publicadas por el INE.
+
+
 ## 🛠️ Tecnologías y Herramientas
 
 * **Lenguaje:** Python 3.x
