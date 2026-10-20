@@ -51,7 +51,7 @@ def porcentaje(valor):
 
 def main():
 
-    # 1. Cargamos las predicciones previamente generadas
+    # Cargamos las predicciones previamente generadas
     if not RUTA_PREDICCIONES.exists():
         raise FileNotFoundError(
             f"No se encuentra el archivo de predicciones: {RUTA_PREDICCIONES}\n"
@@ -67,7 +67,7 @@ def main():
 
     print(f"\nNúmero de predicciones: {len(df)}")
 
-    # 2. Evolución general del coste laboral
+    # Evolución general del coste laboral
     medias_trimestre = (
         df.groupby("trimestre")["coste_estimado_euros"].mean()
     )
@@ -84,7 +84,7 @@ def main():
     print(f"Diferencia estimada: {euros(diferencia)}")
     print(f"Variación estimada: {porcentaje(variacion)}")
 
-    # 3. Comparación por sector
+    # Comparación por sector
     medias_sector = (
         df.groupby(["sectores_actividad", "trimestre"])
         ["coste_estimado_euros"]
@@ -109,7 +109,7 @@ def main():
         print(f"  Q4: {euros(fila[4])}")
         print(f"  Variación: {porcentaje(fila['variacion_pct'])}")
 
-    # 4. Comparación territorial
+    # Comparación territorial
     medias_ccaa = (
         df.groupby(["comunidades_autonomas", "trimestre"])
         ["coste_estimado_euros"]
@@ -158,7 +158,7 @@ def main():
         f"({porcentaje(medias_ccaa.loc[comunidad_menor_variacion, 'variacion_pct'])})"
     )
 
-    # 5. Tasas de actividad, empleo y paro incluidas en el CSV
+    # Tasas de actividad, empleo y paro incluidas en el CSV
     # Cada comunidad aparece repetida por sector; la contamos una sola vez.
     columnas_tasas = [
         "tasa_actividad",
