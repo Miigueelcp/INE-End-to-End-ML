@@ -348,6 +348,12 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
+**Activar el entorno virtual en macOS y Linux:**
+
+```bash
+source .venv/bin/activate
+```
+
 **Instalar las dependencias:**
 
 ```bash
