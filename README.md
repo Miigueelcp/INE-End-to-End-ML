@@ -326,13 +326,13 @@ Estas relaciones son descriptivas y no implican causalidad. Además, la correlac
 
 ## 🚀 Cómo ejecutar el proyecto
 
-### 1. **Clonar el repositorio**
+### 1. Clonar el repositorio
 
    ```bash
-   git clone https://github.com/TuUsuario/Spain-Labor-Cost-Predictor.git
-   cd Spain-Labor-Cost-Predictor
+   git clone https://github.com/TuUsuario/INE-End-to-End-ML.git
+   cd INE-End-to-End-ML
    ```
-Sustituye TuUsuario por tu nombre de usuario de GitHub y comprueba que el nombre del repositorio coincide con el publicado.
+Sustituye `TuUsuario` por tu nombre de usuario de GitHub.
 
 ### 2. Instalar las dependencias
 
@@ -354,29 +354,40 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### 3. **Configurar MySQL**
+### 3. Configurar MySQL
 
 Asegúrate de disponer de un servidor MySQL en ejecución y configura los parámetros de conexión necesarios para el proyecto.
 
-Las credenciales deben gestionarse mediante variables de entorno o un archivo de configuración local excluido del control de versiones. **No publiques contraseñas ni credenciales de acceso en GitHub**.
+Las credenciales deben gestionarse mediante variables de entorno o un archivo de configuración local excluido del control de versiones.
 
 
 ### 4. Ejecutar los pipelines
 
-Primero, ejecuta el pipeline de preparación e integración de los datos:
+**Paso 1. Preparación e integración de los datos**
+
+Ejecuta el pipeline ETL para cargar, limpiar y preparar los datos, e integrarlos mediante MySQL.
 
 ```bash
 python 01_data_pipeline.py
 ```
 
-A continuación, ejecuta el pipeline de análisis y modelado:
+**Paso 2. Entrenamiento de los modelos y generación de predicciones**
+
+Ejecuta el pipeline de análisis y modelado para realizar el análisis exploratorio, entrenar y evaluar los modelos, generar las predicciones de Q3 y Q4 de 2026 y guardar las visualizaciones.
 
 ```bash
 python 02_ml_pipeline.py
 ```
 
-La ejecución requiere que los archivos de datos estén disponibles en las rutas esperadas por el proyecto y que la conexión a MySQL esté correctamente configurada.
+**Paso 3. Resumen de las predicciones**
 
+Ejecuta el script que lee el archivo de predicciones generado en el paso anterior y muestra un resumen de los principales resultados.
+
+```bash
+python 03_resumen_predicciones.py
+```
+
+La ejecución requiere que los archivos de datos estén disponibles en las rutas esperadas por el proyecto, que la conexión a MySQL esté correctamente configurada y que los scripts se ejecuten en el orden indicado.
 
 
 ## 👨‍💻 Autor
