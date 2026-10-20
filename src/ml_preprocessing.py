@@ -10,7 +10,7 @@ def preparar_dataset_ml(df_tabla):
     print(f"Filas iniciales: {len(df_tabla)} | Columnas: {df_tabla.shape[1]}")
     print(f"Duplicados exactos: {df_tabla.duplicated().sum()}")
     
-    # 1. Recuperamos la tabla de costes (evitando duplicidades)
+    # Recuperamos la tabla de costes (evitando duplicidades)
     claves_coste = [
         'comunidades_autonomas', 'ano', 'trimestre', 
         'sectores_actividad', 'tipo_de_coste'
@@ -23,7 +23,7 @@ def preparar_dataset_ml(df_tabla):
     )
     print(f"Filas de costes únicas extraídas: {len(df_costes)}")
 
-    # 2. Seleccionamos y pivotamos las tasas de la EPA (ambos sexos)
+    # Seleccionamos y pivotamos las tasas de la EPA (ambos sexos)
     df_epa_ambos = df_tabla.loc[
         df_tabla['sexo'] == 'ambos_sexos',
         ['comunidades_autonomas', 'ano', 'trimestre', 'tipo_de_tasa', 'valor_tasa']
@@ -48,7 +48,7 @@ def preparar_dataset_ml(df_tabla):
     )
     df_epa_ancha.columns.name = None  # Limpiamos el nombre del índice de columnas
 
-    # 3. Volvemos a unir las tablas (Join final)
+    # Volvemos a unir las tablas (Join final)
     df_integrado = pd.merge(
         df_costes,
         df_epa_ancha,
