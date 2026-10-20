@@ -55,7 +55,6 @@ El código se organiza en módulos para separar la preparación de datos, el an�
 │   ├── clustering_reciente.png
 │   └── predicciones_q3_q4_2026.png
 │   
-│
 └── src/
     ├── __init__.py
     ├── database.py            # Conexión y operaciones con MySQL
